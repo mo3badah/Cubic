@@ -1,0 +1,199 @@
+body{
+	perspective-origin:50% -100%;
+	perspective: 1500px;
+	overflow:hidden;
+	background:#333;
+}
+.cube {
+	margin-left: 500px;
+	position:relative;
+	padding-bottom:20%;
+	transform-style: preserve-3d;
+	transform-origin: 50% 100%;
+	transform:rotateY(45deg) rotateX(0);
+	transition:transform 10s;
+}
+.cubeFace {
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left:40%;top:0;
+	width: 34%;height:100%;
+	margin: 0 auto;
+	transform-style: inherit;
+	background: radial-gradient(circle farthest-corner at top left, rgba(63, 94, 251, 0.94) 0%, rgba(252, 70, 107, 0.94) 100%);
+	box-shadow:inset 0 0 0 5px #333;
+	transform-origin:50% 50%;
+	transform: rotateX(90deg);
+	backface-visibility:visible;
+}
+.face6{
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin:50% 50%;
+	transform: rotatez(90deg) translateX(100%) rotateY(90deg);
+}
+.face5{
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin:50% 50%;
+	transform: rotatez(0deg) translateX(50%) translatey(50%) rotateY(90deg);
+}
+.face3{
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin:50% 50%;
+	transform: rotatez(0deg) translateX(-50%) translatey(50%) rotateY(90deg);
+}
+.face2{
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin:50% 50%;
+	transform: rotatez(0deg) translateX(0%) translatey(50%) translatez(120px) rotateY(0deg);
+}
+.face4{
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin:50% 50%;
+	transform: rotatez(0deg) translateX(0%) translatey(50%) translatez(-120px) rotateY(0deg);
+}
+.cubeFace>div{
+	background-color: white;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	position: absolute;
+}
+.face2>div:nth-child(1){top: 30px; left: 30px}
+.face2>div:nth-child(2){right: 30px; bottom: 30px}
+
+.face3>div:nth-child(1){top: 30px; left: 30px}
+.face3>div:nth-child(2){}
+.face3>div:nth-child(3){right: 30px; bottom: 30px}
+
+.face4>div:nth-child(1){top: 30px; left: 30px}
+.face4>div:nth-child(2){top: 30px; right: 30px}
+.face4>div:nth-child(3){bottom: 30px; left: 30px}
+.face4>div:nth-child(4){bottom: 30px; right: 30px}
+
+.face5>div:nth-child(1){top: 30px; left: 30px}
+.face5>div:nth-child(2){top: 30px; right: 30px}
+.face5>div:nth-child(3){}
+.face5>div:nth-child(4){bottom: 30px; left: 30px}
+.face5>div:nth-child(5){bottom: 30px; right: 30px}
+
+.face6>div:nth-child(1){top: 30px; left: 30px}
+.face6>div:nth-child(2){top: 30px; right: 30px}
+.face6>div:nth-child(3){left: 30px}
+.face6>div:nth-child(4){right: 30px}
+.face6>div:nth-child(5){bottom: 30px; left: 30px}
+.face6>div:nth-child(6){bottom: 30px; right: 30px}
+
+/*body:hover .cube{*/
+/*	transform:rotateY(405deg) rotateX(360deg);*/
+/*}*/
+#play1,#play2{
+	position: absolute;
+	top: 200%;
+	right: 25%;
+	width: 80px;
+	height: 60px;
+	border-radius: 5px;
+	background: radial-gradient(circle farthest-corner at top left, rgba(63, 94, 251, 0.94) 0%, rgba(252, 70, 107, 0.94) 100%);
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.photo{
+	position: relative;
+}
+.photo img{
+	position: absolute;
+	/*margin: 10px auto;*/
+	width: 500px;
+	height: 500px;
+}
+.photo div{
+	width: 50px;
+	height: 50px;
+	background-color: white;
+	border-radius:50%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 500px ;
+	left: 0;
+	transition: 1s ease-in-out;
+}
+.controllers{
+	position: relative;
+}
+.controllers .players{
+	position: absolute;
+	top: 5px;
+	right: 200px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	color: White;
+	
+}
+.players div{
+	padding:10px;
+	margin-left:100px;
+}
+.players div span{
+	padding: 20px 20px 0 20px;
+	margin: 20px 20px 0 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+.players div.active{
+	background: radial-gradient(circle farthest-corner at top left, rgba(63, 94, 251, 0.94) 0%, rgba(252, 70, 107, 0.94) 100%);
+}
+
+.celebrate{
+	width: 400px;
+	height: 200px;
+	border-radius: 5px;
+	margin: 30px auto;
+	background-color: #eee;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	visibility: hidden;
+}
+.btn{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	background-color: red;
+	color: white;
+	font-size: 25px;
+	font-weight: bolder;
+	border: none;
+	border-radius: 50%;
+}
